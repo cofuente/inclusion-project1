@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -15,10 +15,10 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       }
-    ]);
+    ])
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Reservations', null, {});
+    return queryInterface.bulkDelete('Reservations', null, {})
   }
-};
+}
