@@ -48,3 +48,7 @@ The Reservation class in this example allows you to define instance methods and 
 
 For an application of this complexity ensuring that database operations through models work well is important. Models are mostly your own code.
 
+To undo a seed and re-seed:
+`npx sequelize-cli db:migrate:undo`
+`npx sequelize-cli db:migrate`
+`npx sequelize-cli db:seed:all`
