@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {})
 
   class Reservation extends SequelizeReservation {
-    static async all(){
+    static async allReservations(){
       return await this.findAll()
     }
   }
