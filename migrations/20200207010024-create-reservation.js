@@ -9,10 +9,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       slot: {
-        type: Sequelize.DATE
+        allowNull: false,
+        type: Sequelize.ENUM('0','1','2','3','4'), // 18 half hour slots, 0-17
+      },
+      table:{
+        allowNull: false,
+        type: Sequelize.ENUM('1','2','3') // 10 tables
       },
       createdAt: {
         allowNull: false,
