@@ -23,24 +23,24 @@ This boilerplate contains the following:
 This project uses Sequelize as an ORM. It was set up using the directions here: <https://sequelize.org/master/manual/migrations.html>. The easiest way to work with this set up is to use the generator that comes with `sequelize-cli`: <https://github.com/sequelize/cli#usage>.
 
 ```javascript
-'use strict';
+'use strict'
 module.exports = (sequelize, DataTypes) => {
   const SequelizeReservation = sequelize.define('Reservation', {
     name: DataTypes.STRING,
     slot: DataTypes.DATE
-  }, {});
+  }, {})
 
   class Reservation extends SequelizeReservation {
-    static async all(){
-      return await this.findAll();
+    static async allReservations(){
+      return await this.findAll()
     }
   }
 
-  return Reservation;
-};
+  return Reservation
+}
 ```
 
-The Reservation class in this example allows you to define instance methods and static methods. You can call this all method like this: `Reservation.all()`.
+The Reservation class in this example allows you to define instance methods and static methods. You can call this all method like this: `Reservation.allReservations()`.
 
 ## Running Tests
 
