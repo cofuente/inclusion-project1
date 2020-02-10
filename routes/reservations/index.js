@@ -2,17 +2,14 @@ const express = require('express')
 const router = express.Router()
 const { Reservation } = require('../../models')
 
-router.get('/', async (req,res) => {
-  res.json(await Reservation.allReservations())
-})
+router.get('/', async (req,res) => res.status(200).json(await Reservation.allReservations()))
 
 router.put('/', async (req,res,next) => {
   const { table, slot } = req.body
   Reservation.checkForConflicts(table,slot)
     .then((conflict)=> {
       if(conflict) {
-        res.status(409)
-
+        return res.status(409).json('Someone already has that slot, sorry!')
       }
       else {
         Reservation.create(req.body)
