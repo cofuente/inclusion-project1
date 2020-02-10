@@ -10,6 +10,17 @@ module.exports = (sequelize, DataTypes) => {
     static async allReservations(){
       return await this.findAll()
     }
+    static async checkForConflicts(proposedTable, proposedSlot){
+      return await this.findOne({
+        where: {
+          table: proposedTable,
+          slot: proposedSlot
+        },
+      }).then(result => {
+        if (result) return true
+        else return false
+      })
+    }
   }
 
   return Reservation
