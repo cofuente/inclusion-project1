@@ -3,6 +3,18 @@
 // function sum (num1, num2) {
 //   return num1 + num2
 // }
+import '../node_modules/pikaday/css/pikaday.css'
+import Pickaday from 'pikaday'
+import getMoment from 'moment'
+
+
+const picker = new Pikaday({
+    field: document.getElementById('day'),
+    format: 'D MMM YYYY',
+    onSelect: function () {
+      console.log(this.getMoment().format('Do MMMM YYYY'))
+    }
+  })
 
 function submitFunction(event) {
     event.preventDefault()
