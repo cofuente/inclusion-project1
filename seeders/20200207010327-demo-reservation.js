@@ -5,14 +5,14 @@ module.exports = {
     return queryInterface.bulkInsert('Reservations', [
       {
         name: 'John Cena',
-        slot: '0',
+        slot: 0,
         table: '1',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Not John Cena',
-        slot: '0',
+        slot: 0,
         table: '3',
         createdAt: new Date(),
         updatedAt: new Date()

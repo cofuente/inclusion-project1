@@ -14,7 +14,11 @@ module.exports = {
       },
       slot: {
         allowNull: false,
-        type: Sequelize.ENUM('0','1','2','3','4'), // 18 half hour slots, 0-17
+        type: Sequelize.INTEGER, // 18 half hour slots, 0-17
+        validate: {
+          isInt: true,
+          isIn: [[0,1,2,3,4,5,6,6,8,9,10,11,12,13,14,15,16,17]]
+        }
       },
       table:{
         allowNull: false,
