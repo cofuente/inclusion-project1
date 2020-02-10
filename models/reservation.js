@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const SequelizeReservation = sequelize.define('Reservation', {
     name: DataTypes.STRING,
     slot: DataTypes.INTEGER, // 18 half hour slots, 0-17
-    table: DataTypes.ENUM('1','2','3') // 10 tables
+    table: DataTypes.INTEGER, // 10 tables, 1-10
+    // day: DataTypes.DATE
   }, {})
 
   class Reservation extends SequelizeReservation {

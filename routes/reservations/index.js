@@ -25,7 +25,7 @@ router.delete('/:id', async (req, res, next) => {
       id: req.params.id
     }
   }).then((result) => {
-      const responseMessage = result === 1? 'Reservation cancelled successfully.' : 'That reservation does not exist and therefore was not deleted. Please try again.' 
+      const responseMessage = result === 1? 'Reservation cancelled successfully.' : 'Something went wrong with your cancellation. Please try again.' 
       return res.json(responseMessage)
     })
     .catch(next)

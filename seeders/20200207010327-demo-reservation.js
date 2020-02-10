@@ -6,14 +6,16 @@ module.exports = {
       {
         name: 'John Cena',
         slot: 0,
-        table: '1',
+        table: 1,
+        // day: new Date(),
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Not John Cena',
+        name: 'John Hamm',
         slot: 0,
-        table: '3',
+        table: 3,
+        // day: new Date(),
         createdAt: new Date(),
         updatedAt: new Date()
       }
