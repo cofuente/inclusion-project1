@@ -9,7 +9,7 @@ router.put('/', async (req,res,next) => {
   Reservation.checkForConflicts(table,slot)
     .then((conflict)=> {
       if(conflict) {
-        return res.status(409).json('Someone already has that slot, sorry!')
+        return res.status(409).json('Something went wrong with your reservation. Please try again.')
       }
       else {
         Reservation.create(req.body)
