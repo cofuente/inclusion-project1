@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     slot: DataTypes.INTEGER, // 18 half hour slots, 0-17
     table: DataTypes.INTEGER, // 10 tables, 1-10
-    // day: DataTypes.DATE
+    day: DataTypes.DATE
   }, {})
 
   class Reservation extends SequelizeReservation {

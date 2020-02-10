@@ -21,13 +21,14 @@ module.exports = {
           max: 17
         }
       },
-      // day: {
-      //   allowNull: false,
-      //   validate: {
-      //     isDate: true,
-      //     isAfter: new Date()
-      //   }
-      // },
+      day: {
+        allowNull: false,
+        type:Sequelize.DATE,
+        validate: {
+          isDate: true,
+          isAfter: new Date()
+        }
+      },
       table:{
         allowNull: false,
         type: Sequelize.INTEGER, // 10 tables 1-10
