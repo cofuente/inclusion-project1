@@ -14,29 +14,15 @@ module.exports = {
       },
       slot: {
         allowNull: false,
-        type: Sequelize.INTEGER, // 18 half hour slots, 0-17
-        validate: {
-          isInt: true,
-          min: 0,
-          max: 17
-        }
-      },
-      day: {
-        allowNull: false,
-        type:Sequelize.DATE,
-        validate: {
-          isDate: true,
-          isAfter: new Date()
-        }
+        type: Sequelize.INTEGER // 18 half hour slots, 0-17
       },
       table:{
         allowNull: false,
-        type: Sequelize.INTEGER, // 10 tables 1-10
-        validate: {
-          isInt: true,
-          min: 1,
-          max: 10
-        }
+        type: Sequelize.INTEGER // 10 tables 1-10
+      },
+      day: {
+        allowNull: false,
+        type: Sequelize.DATEONLY
       },
       createdAt: {
         allowNull: false,
@@ -49,6 +35,6 @@ module.exports = {
     })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Reservations')
+    return queryInterface.dropTable('Reservations') // if you ever make more tables add them here. 
   }
 }

@@ -5,8 +5,8 @@ const { Reservation } = require('../../models')
 router.get('/', async (req,res) => res.status(200).json(await Reservation.allReservations()))
 
 router.put('/', async (req,res,next) => {
-  const { table, slot } = req.body
-  Reservation.checkForConflicts(table,slot)
+  const { table, slot, day } = req.body
+  Reservation.checkForConflicts(table,slot,day)
     .then((conflict)=> {
       if(conflict) {
         return res.status(409).json('Something went wrong with your reservation. Please try again.')
